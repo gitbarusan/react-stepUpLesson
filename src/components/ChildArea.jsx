@@ -8,7 +8,7 @@ const style = {
 
 // memoで囲むことでpropsが変更された場合のみレンダリングされる
 export const ChileArea = memo((props) => {
-  const { open } = props;
+  const { open, onClickClose } = props;
   console.log("ChileAreaが再レンダリングされた!!");
 
   const data = [...Array(200).keys()];
@@ -20,6 +20,7 @@ export const ChileArea = memo((props) => {
       {open ? (
         <div style={style}>
           <p>子コンポーネント</p>
+          <button onClick={onClickClose}>閉じる</button>
         </div>
       ) : null}
     </>
